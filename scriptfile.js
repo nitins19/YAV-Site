@@ -12,6 +12,14 @@ submitButton.addEventListener("click", () => {
         };
 
         localStorage.setItem("userDetail " + emailId, JSON.stringify(userdetails));
-        console.log(userdetails);
+        addNewLineElement(userdetails);
     }
 });
+
+function addNewLineElement(userdetails) {
+    const ul = document.getElementById("listOfPeople");
+    const li = document.createElement("li");
+    li.appendChild(document.createTextNode(userdetails.name + " " + userdetails.email));
+    ul.appendChild(li);
+    console.log(userdetails);
+}
