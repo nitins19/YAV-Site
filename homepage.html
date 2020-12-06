@@ -2,13 +2,12 @@
 
 <html lang="en">
 
+<head>
+    <link href="yavcss.css" rel="stylesheet" type="text/css">
+</head>
+
 <body>
-    <style>
-        body {
-            background-image: url("meeting.png");
-        }
-    </style>
-    <form action='#'>
+    <form action="#">
         <fieldset>
             <h1 style="color:orange;text-align:center;">Book a call</h1>
             <center style="color:black;text-align:center;">Book a call slot and our representative will call you within 1hr of selected time </centre>
@@ -22,40 +21,12 @@
                 <label for="date" style="color:black;">Time for Call:</label><br>
                 <input type="date" id="date" name="date" style="width:50%;padding:5px;border:1px solid #ccc;border-radius:6px;margin: 4px 2px;box-sizing: border-box;margin-left:-380px;"><br>
                 <label for="time"></label>
-                <input type="time" id="time" name="time" style="width:50%;padding:5px;border:1px solid #ccc;border-radius:6px;margin: 4px 2px;box-sizing: border-box;margin-left:-380px;"><br>
+                <input type="time" id="time" name="time" value="15:00" style="width:50%;padding:5px;border:1px solid #ccc;border-radius:6px;margin: 4px 2px;box-sizing: border-box;margin-left:-380px;"><br>
                 <input type="button" id="submit" value="GET A CALL">
         </fieldset>
     </form>
-    <style>
-        input[type=button] {
-            width: 100%;
-            color: white;
-            background-color: orange;
-            padding: 16px 32px;
-            margin: 4px 2px;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-        
-        fieldset {
-            border-radius: 6px;
-            background-color: white;
-            border: 2px solid red;
-            box-sizing: border-box;
-            font-size: 1.1em;
-            margin: auto;
-            margin: auto;
-            position: relative;
-            width: 800px;
-            height: 520 px;
-        }
-        
-        label {
-            display: inline;
-            float: left;
-            text-align: left;
-        }
-    </style>
+
+
     <ul id="listOfPeople"></ul>
     <script src="yavjs.js"></script>
 
