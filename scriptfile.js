@@ -47,14 +47,14 @@ submitButton.addEventListener("click", () => {
     const name = document.getElementById("name").value;
     const phone = document.getElementById("phone").value;
     if (emailId.length > 0 && name.length > 0) {
-        const object = {
+        const userdetails = {
             name: name,
             emailId: emailId,
             phone: phone
         };
-        localStorage.setItem("userDetails " + emailId, JSON.stringify(object));
+        localStorage.setItem("userDetails " + emailId, JSON.stringify(userdetails));
 
-        addNewLineElement(object);
+        addNewLineElement(userdetails);
 
     }
 });
