@@ -1,25 +1,54 @@
 const submitButton = document.getElementById("submit");
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("vscode");
+    localStorage.getItem();
+});
+
+if (document.readyState !== "loading") {
+    console.log("vscode");
+
+    var keys = Object.keys(localStorage), 
+        i = keys.length; 
+    console.log("keys", keys);
+    let stringifiedDetailsOfPeople, detailsOfPeople;
+
+  
+    while (i--) {
+        //i==2
+        if (keys[i].match(/userDetails/g)) {
+            
+            stringifiedDetailsOfPeople = localStorage.getItem(keys[i]);
+            console.log("stringifiedDetailsOfPeople", );
+            detailsOfPeople = JSON.parse(stringifiedDetailsOfPeople);
+            console.log("details", detailsOfPeople);
+
+
+            addNewLineElement(detailsOfPeople);
+        }
+    }
+}
+
+
 submitButton.addEventListener("click", () => {
-
-    const name = document.getElementById("name").value;
     const emailId = document.getElementById("email").value;
-    const phone = document.getElementById("phone").value;
-    if (name.length > 0 && emailId.length > 0) {
-        userdetails = {
+    const name = document.getElementById("name").value;
+    if (emailId.length > 0 && name.length > 0) {
+        const object = {
             name: name,
-            email: emailId,
-            phone: phone
+            emailId: emailId 
         };
-
-        localStorage.setItem("userDetail " + emailId, JSON.stringify(userdetails));
-        addNewLineElement(userdetails);
+        localStorage.setItem("userDetails " + emailId, JSON.stringify(object));
+        
+        addNewLineElement(object);
     }
 });
 
-function addNewLineElement(userdetails) {
+function addNewLineElement(object) {
     const ul = document.getElementById("listOfPeople");
     const li = document.createElement("li");
-    li.appendChild(document.createTextNode(userdetails.name + " " + userdetails.email));
+    li.appendChild(document.createTextNode(object.name + " " + object.emailId));
     ul.appendChild(li);
-    console.log(userdetails);
+    console.log(object);
 }
