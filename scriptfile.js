@@ -20,7 +20,7 @@ if (document.readyState !== "loading") {
         if (keys[i].match(/userDetails/g)) {
             
             stringifiedDetailsOfPeople = localStorage.getItem(keys[i]);
-            console.log("stringifiedDetailsOfPeople", );
+            console.log("stringifiedDetailsOfPeople",stringifiedDetailsOfPeople);
             detailsOfPeople = JSON.parse(stringifiedDetailsOfPeople);
             console.log("details", detailsOfPeople);
 
