@@ -16,7 +16,7 @@ if (document.readyState !== "loading") {
 
   
     while (i--) {
-        //i==2
+        
         if (keys[i].match(/userDetails/g)) {
             
             stringifiedDetailsOfPeople = localStorage.getItem(keys[i]);
