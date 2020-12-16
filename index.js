@@ -1,4 +1,4 @@
-const apiendpoint = "https://crudcrud.com/api/fd937ea29cf141cba25b7886f0c02e6d";
+const apiendpoint = "https://crudcrud.com/api/cda95d75e93e4513bf1d2be4ba694a23";
 const submitButton = document.getElementById("submit");
 document.addEventListener("DOMContentLoaded", () => {
     console.log('vscode');
@@ -14,15 +14,16 @@ document.addEventListener("DOMContentLoaded", () => {
     getUserData();
 });
 
-submitButton.addEventListener("click", () => {
+submitButton.addEventListener("click", (e) => {
     const name = document.getElementById("name").value;
     const emailId = document.getElementById("email").value;
     const userdetails = {
         name: name,
         email: emailId
     };
-    axios.post(`${apiendpoint}/registeruser`, userdetails);
-    addNewLineElement(userdetails);
+    axios.post(`${apiendpoint}/registeruser`, userdetails).then((data) => {
+        addNewLineElement(data.data);
+    });
 
 });
 
@@ -36,6 +37,7 @@ function addNewLineElement(object) {
     deletebutton.type = "button";
     deletebutton.value = "Delete";
     deletebutton.addEventListener("click", () => {
+        li.remove();
         axios.delete(`${apiendpoint}/registeruser/${object._id}`);
     });
     deletebutton.className = "delete";
@@ -43,7 +45,7 @@ function addNewLineElement(object) {
     const updateButton = document.createElement("input");
     updateButton.type = "button";
     updateButton.value = "Update";
-    
+
     li.appendChild(updateButton);
     ul.appendChild(li);
     console.log(object);
